@@ -89,9 +89,10 @@ select {
 body {
     display: flex;
     flex-direction: column;
-    background-color: #f8f8f8;
-    color: #121212;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #1D4F91;
+    color: #ffffff;
+    font-family: 'Bubblegum Sans', cursive;
+    font-weight: 400;
 }
 /* För att göra footern sticky så har vi flex på bodyn och då räcker det med 
  * margin-top auto här.
@@ -125,13 +126,18 @@ footer {
 }
 @media (min-width: 62rem) {
     .container {
-        max-width: 54rem;
+        max-width: 58rem;
     }
 }
 /* Här finns ett par regler för att responsivt anpassa designen på sidan. 
  * Vi gömmer headern på mobil för att spara plats och vänder på spelet så att 
  * knappen blir överst på sidan.
  */
+ .game-button {
+    display: flex;
+    justify-content: center;
+}
+
 @media (max-width: 36rem) {
    header {
        display: none;
@@ -145,20 +151,17 @@ footer {
        justify-content: center;
    }
 }
-/* centrera bilden */
-.img-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
+
 .game {
     margin-top: 2rem;
+    display: flex;
+    justify-content: space-around;
 }
 
 /* flex och space between ordnar layouten för speldata och knappen på desktop */
 .game-hud {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 .game-currency {
@@ -166,11 +169,31 @@ footer {
     padding: 0;
 }
 
+.img-container{
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    width: 17rem;
+}
+
 /* för spelelementet används #id som selektor för att skapa css reglerna */
 #click {
-    width: 8rem;
-    height: 8rem;
-    font-size: 2rem;
+    width: 15rem;
+    height: 15rem;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    background-image: url("/img/Namnlöst-1.png");
+    background-position: center;
+    background-size: 17rem;
+    background-repeat: no-repeat;
+}
+
+.mjolk{
+    width: 12rem;
+    margin: 1.5rem;
 }
 
 /* #msgbox är elementet som visar sidans toasts, popupmeddelanden
@@ -202,7 +225,7 @@ footer {
 
 .achievement {
     color: #121212;
-    background-color: rebeccapurple;
+    background-color: greenyellow;
 }
 
 /* dessa kort används för spelets uppgraderingar 
@@ -219,7 +242,7 @@ footer {
 }
 
 .card:hover {
-    background-color: #dfdfdf;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 /* klassen används på kortets titel, font-weight: 600 gör fonten fetare, en normal
  * font vikt är oftast 400

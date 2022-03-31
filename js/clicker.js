@@ -13,6 +13,7 @@ const mpsTracker = document.querySelector('#mps'); // money per second
 const mpcTracker = document.querySelector('#mpc'); // money per click
 const upgradeList = document.querySelector('#upgradelist');
 const msgbox = document.querySelector('#msgbox');
+const achievemen = document.querySelector('#achievemen');
 
 /* Följande variabler använder vi för att hålla reda på hur mycket pengar som
  * spelaren, har och tjänar.
@@ -27,6 +28,7 @@ let moneyPerSecond = 0;
 let last = 0;
 
 let achievementTest = false;
+let dinmor = false;
 
 /* Med ett valt element, som knappen i detta fall så kan vi skapa listeners
  * med addEventListener så kan vi lyssna på ett specifikt event på ett html-element
@@ -71,10 +73,16 @@ function step(timestamp) {
     // achievements. Titta dock på upgrades arrayen och gör något rimligare om du
     // vill ha achievements.
     // på samma sätt kan du även dölja uppgraderingar som inte kan köpas
-    if (moneyPerClick == 10 && !achievementTest) {
+    if (moneyPerClick == 2 && !achievementTest) {
         achievementTest = true;
-        message('Du har hittat en FOSSIL!', 'achievement');
+        episkt('Du har hittat en FOSSIL!', 'achievement');
     }
+
+    if (moneyPerClick == 3 && !dinmor) {
+        dinmor = true;
+        episkt('Du har hittat en GURKA!', 'achievement');
+    }
+    
 
     window.requestAnimationFrame(step);
 }
@@ -184,4 +192,11 @@ function message(text, type) {
     setTimeout(() => {
         p.parentNode.removeChild(p);
     }, 2000);
+}
+
+function episkt(text, type) {
+    const p = document.createElement('p');
+    p.classList.add(type);
+    p.textContent = text;
+    achievemen.appendChild(p);
 }

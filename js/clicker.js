@@ -116,28 +116,28 @@ window.addEventListener('load', (event) => {
 upgrades = [
     {
         name: 'Chokladdvärg',
-        cost: 10,
-        amount: 0.1,
-    },
-    {
-        name: 'Chokladhund',
         cost: 100,
         amount: 1,
     },
     {
-        name: 'Mycket skumma tomtar',
+        name: 'Chokladhund',
         cost: 1000,
         amount: 10,
     },
     {
-        name: 'Rasmus',
+        name: 'Mycket skumma tomtar',
         cost: 10000,
         amount: 100,
     },
     {
-        name: 'Gremlin',
+        name: 'Rasmus',
         cost: 100000,
         amount: 1000,
+    },
+    {
+        name: 'Gremlin',
+        cost: 1000000,
+        amount: 10000,
     },
 ];
 

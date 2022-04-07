@@ -115,19 +115,29 @@ window.addEventListener('load', (event) => {
  */
 upgrades = [
     {
-        name: 'Fin sop',
+        name: 'Chokladdvärg',
         cost: 10,
+        amount: 0.1,
+    },
+    {
+        name: 'Chokladhund',
+        cost: 100,
         amount: 1,
     },
     {
-        name: 'Spade',
-        cost: 100,
+        name: 'Mycket skumma tomtar',
+        cost: 1000,
         amount: 10,
     },
     {
-        name: 'Hjälpreda',
-        cost: 1000,
+        name: 'Rasmus',
+        cost: 10000,
         amount: 100,
+    },
+    {
+        name: 'Gremlin',
+        cost: 100000,
+        amount: 1000,
     },
 ];
 
@@ -157,14 +167,14 @@ function createCard(upgrade) {
     const cost = document.createElement('p');
 
     header.textContent = `${upgrade.name}, +${upgrade.amount} per sekund.`;
-    cost.textContent = `Köp för ${upgrade.cost} benbitar.`;
+    cost.textContent = `Köp för ${upgrade.cost} chokladpulver`;
 
     card.addEventListener('click', (e) => {
         if (money >= upgrade.cost) {
             moneyPerClick++;
             money -= upgrade.cost;
             upgrade.cost *= 1.5;
-            cost.textContent = 'Köp för ' + upgrade.cost + ' benbitar';
+            cost.textContent = 'Köp för ' + upgrade.cost + ' chokladpulver';
             moneyPerSecond += upgrade.amount;
             message('Grattis du har lockat till dig fler besökare!', 'success');
         } else {

@@ -22,6 +22,26 @@ dd {
     padding: 0;
 }
 
+.title {
+    width: 18rem;
+}
+
+h1 {
+    font-weight: 400;
+    color: white;
+}
+
+h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 100;
+    font-size: large;
+}
+
+.pannkaka {
+    width: 30rem;
+}
+
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role='list'],
 ol[role='list'] {
@@ -87,11 +107,13 @@ select {
  * Genom att sätta en font på body elementet så används fonten på hela sidan.
  */
 body {
+    background-image: url(/img/InteOBoy2.png);
+    background-size: 80rem;
     display: flex;
     flex-direction: column;
     background-color: #1D4F91;
     color: #ffffff;
-    font-family: 'Bubblegum Sans', cursive;
+    font-family: 'Itim', cursive;
     font-weight: 400;
 }
 /* För att göra footern sticky så har vi flex på bodyn och då räcker det med 
@@ -126,7 +148,7 @@ footer {
 }
 @media (min-width: 62rem) {
     .container {
-        max-width: 58rem;
+        max-width: 150rem;
     }
 }
 /* Här finns ett par regler för att responsivt anpassa designen på sidan. 
@@ -225,7 +247,7 @@ footer {
 
 .achievement {
     color: #121212;
-    background-color: greenyellow;
+    background-color: rgb(247, 247, 247);
 }
 
 /* dessa kort används för spelets uppgraderingar 
